@@ -1,7 +1,10 @@
 import './App.css'
+import WeatherForecast from './components/WeatherForecast/WeatherForecast.jsx';
 
-// src/App.jsx
-const weatherForecasts = [
+
+const App = () => {
+
+  const weatherForecasts = [
   {
     day: 'Mon',
     img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/day.svg',
@@ -38,22 +41,18 @@ const weatherForecasts = [
     time: 'Night',
   },
 ];
-
-const App = () => {
-
   return (
       <>
     <h1>Local Weather</h1>
-    <section>
-      // Weather data here
-    </section>
+      <section>
+        {weatherForecasts.map((forecast, index) => (
+          <WeatherForecast key={index} {...forecast} />
+        ))}
+      </section>
   </>
 
   );
 }
-
-
-
 
 
 export default App

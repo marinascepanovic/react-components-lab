@@ -6,3 +6,4 @@ const WeatherIcon = ({img}) => {
         </div>
     );
 }
+export default WeatherIcon;
